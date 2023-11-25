@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 36rem;">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-center">
+          <img class="image" src="/img/Hearsay.png" />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h2>Create an account</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            
+            <form action="/registrar" method="post">
+              <div class="form-group">
+                <input type="text" value="<?= $this->view->usuario['nome'] ?>" name="nome" class="form-control" placeholder="Name">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" value="<?= $this->view->usuario['email'] ?>" name="email" class="form-control" placeholder="E-mail">
+              </div>
+
+              <div class="form-group">
+                <input type="password" value="<?= $this->view->usuario['senha'] ?>" name="senha" class="form-control" placeholder="Password">
+              </div>
+
+              <!-- this is the field do upload profile pictures -->
+              <form action="" enctype="multipart/form-data">
+                <div class="form-group">
+                  <input type="file" value="" name="imagem" accept="image/jpeg, image/jpg, image/png" class="form-control">
+                </div>
+              </form>
+              
+              <div class="mt-4 mb-4">
+                <small class="form-text">
+                By signing up, you agree to the Terms of Service and Privacy Policies, including the Use of Cookies. Others will be able to reach you at the email or phone number you provide · Privacy Options
+                </small>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+
+              <?php if($this->view->erroCadastro) { ?>
+
+                <small class="form-text text-danger">*Error when trying to register, check if the fields were filled in correctly.</small>
+
+              <?php } ?>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

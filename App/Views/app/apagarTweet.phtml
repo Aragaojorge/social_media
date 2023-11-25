@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg menu">
+	<div class="container">
+	  <div class="navbar-nav">
+	  	<a class="menuItem" href="/timeline">
+	  		Home
+	  	</a>
+
+	  	<a class="menuItem" href="/sair">
+	  		Log out
+	  	</a>
+			<img src="/img/twitter_logo.png" class="menuIco" />
+	  </div>
+	</div>
+</nav>
+
+<div class="container mt-5">
+	<div class="row mb-2">
+		<div class="col tweetBox">
+
+            <div>
+                <h1 class="text-muted">Do you really want to delete the hearsay?</h1>
+                <h3><?php print_r($_GET['tweet_content']) ?></h3>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <!-- <?php print_r($_GET['tweet_id']) ?> -->
+                <form method="post" action="/deletado?id=<?= $_GET['tweet_id'] ?>">	
+
+                    <div class="col mt-2 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-danger">I'm Ok with that!</button>
+                    </div>
+                </form>
+
+                <form method="get" action="/timeline">
+                    <div class="col mt-2 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+		</div>
+	</div>
+</div>
